@@ -1,13 +1,24 @@
-<h2>This is in the ejs file</h2>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 
-<h2>File Upload</h2>
-<form enctype="multipart/form-data" action="/" method="post">
-  <input type="file" name="myFile">
-  <input type="submit" class="btn btn-danger">
-</form>
+    <h2>Upload your Photos</h2>
 
-<h3>Images</h3>
-<% images.forEach(function(image){ %>
-  <% var imgUrl = cloudinary.url(image, {width: 250, height: 250}); %>
-  <img src="<%= imgUrl %>">
-<% }) %>
+    <h2>File Upload</h2>
+    <form enctype="multipart/form-data" action="/" method="post">
+      <input type="file" name="myFile">
+      <input type="submit" class="btn btn-danger">
+    </form>
+
+    <h3>My Images</h3>
+    <% images.forEach(function(image){ %>
+      <% var imgUrl = cloudinary.url(image, {width: 350, height: 250}); %>
+      <img src="<%= imgUrl %>">
+    <% }) %>
+
+  </body>
+</html>
